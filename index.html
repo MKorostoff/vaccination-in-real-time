@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Covid Vaccination in Real Time</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <h1>Covid Vaccination in Real Time</h1>
+  <div class="meta">
+    Updated March 14, 2021
+    <br>
+    <a href="#" target="_blank">About this page</a>
+  </div>
+
+  <div class="section section-first">
+    <div class="section-description">
+      The United States is now vaccinating about <span id="per-day"></span> million people against COVID-19 every day. Around <span id="per-second"></span> people per second receive either their first or second dose. That's about this fast:
+    </div>
+    <div id="twenty_four" class="people-outer">
+      <div id="twenty_four_vertical" class="past"></div>
+      <div id="twenty_four_horizontal" class="progress"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-description">
+      Of course, with few exceptions, vaccination centers do not opperate 24 hours per day. If we assume the average vaccination center is open <span id="open-time">8</span> hours per day, then the active period looks more like this:
+    </div>
+    <div id="open-time-explainer" class="open-time-explainer"></div>
+    <div id="twelve" class="people-outer">
+      <div id="twelve_vertical" class="past"></div>
+      <div id="twelve_horizontal" class="progress"></div>
+    </div>
+    <div class="button-group" id="button-group">
+      <button onclick="startHalfDay(6, 'orange', this.id)" id="six-hours">6 hours</button>
+      <button onclick="startHalfDay(8, 'green', this.id)" id="eight-hours">8 hours</button>
+      <button onclick="startHalfDay(12, 'blue', this.id)" id="twelve-hours">12 hours</button>
+      <button onclick="startHalfDay(16, 'violet', this.id)" id="sixteen-hours">16 hours</button>
+      <div class="button-instructions">Click these buttons to update the graphic.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-description massive">
+      This is a massive improvement in a short time.
+    </div>
+
+    <div class="month-wrapper">
+
+      <div class="mini-month first">
+        <h2>December 1, 2020</h2>
+        <div id="december" class="people-outer">
+          <div id="december_vertical" class="past">No vaccines given</div>
+          <div id="december_horizontal" class="progress"></div>
+        </div>
+      </div>
+
+      <div class="mini-month">
+        <h2>January 1, 2021</h2>
+        <div id="january" class="people-outer turquoise">
+          <div id="january_vertical" class="past">255k per day</div>
+          <div id="january_horizontal" class="progress"></div>
+        </div>
+      </div>
+
+      <div class="mini-month">
+        <h2>February 1, 2021</h2>
+        <div id="february" class="people-outer green">
+          <div id="february_vertical" class="past">1.3m per day</div>
+          <div id="february_horizontal" class="progress"></div>
+        </div>
+      </div>
+
+      <div class="mini-month">
+        <h2>March 1, 2021</h2>
+        <div id="march" class="people-outer dark-green">
+          <div id="march_vertical" class="past">1.8m per day</div>
+          <div id="march_horizontal" class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="section">
+
+      <div class="section-description">
+        Vaccinations are now vastly outpacing the rate of new cases:
+      </div>
+
+      <div class="subsection-wrapper">
+        <div class="subsection">
+          <h2>Vaccines per day</h2>
+          <div id="outpace" class="short people-outer">
+            <div id="outpace_vertical" class="past"></div>
+            <div id="outpace_horizontal" class="progress"></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h2>New cases per day</h2>
+          <div id="new_cases" class="short people-outer red">
+            <div id="new_cases_vertical" class="past"></div>
+            <div id="new_cases_horizontal" class="progress"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="section-description">
+        Still, there is a long way to go.
+      </div>
+      <div id="zoom">
+        <button id="zoomin" onclick="zoomin()">Click to zoom</button>
+        <button id="zoomout" onclick="zoomout()">Click to zoom out</button>
+      </div>
+        <div id="total-doses-wrapper">
+          <div id="total-doses">
+            <div id="doses-given">Doses given</div>
+            <div id="doses-needed">
+              <span>Doses needed</span>
+              <span id="scroll-indicator">&laquo; scroll left/right &raquo;</span>
+              <div id="pixels" class="pixels">
+                <div id="next-pixel">Each pixel represents 1,000 doses. <br><br>Next pixel in <span id="timer"></span>s</div>
+                <div id="prototypical-pixel" class="pixel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-description">
+        At the current pace, we should reach heard immunity by late summer, 2021.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-description sources">
+        Sources:
+        <ul>
+          <li><a href="https://www.nytimes.com/interactive/2020/us/covid-19-vaccine-doses.html" target="_blank">Rate of vaccination</a></li>
+          <li><a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html" target="_blank">Rate of new cases</a></li>
+          <li><a href="https://www.usatoday.com/in-depth/graphics/2021/03/12/when-will-everyone-be-vaccinated-for-covid-19-when-will-we-reach-us-herd-immunity-projection/6840512002/" target="_blank">About 500 million doses needed for heard immunity</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
