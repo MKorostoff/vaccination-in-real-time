@@ -149,7 +149,7 @@ h1, h2 {
 }
 #total-doses-wrapper {
   width: 802px;
-  max-width: 100%;
+  max-width: 95%;
   margin: auto;
   overflow: scroll;
 }
