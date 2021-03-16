@@ -1,8 +1,8 @@
 //Values that should be updated daily:
 //todo: use github actions to update these programatically
-const per_day = 2390000;
-const doses_given = 107000000;
-const cases_per_day =  55215;
+const per_day = 2430000;
+const doses_given = 109000000;
+const cases_per_day =  55153;
 //End transient values
 
 //Fully static values
